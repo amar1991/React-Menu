@@ -1,6 +1,6 @@
 export const initialState = {
-    user: null,
-    api:[]
+    user: "",
+    api:[0]
 };
 
 
@@ -12,13 +12,13 @@ const reducer = (state, action) => {
                 ...state,
                 user: action.user
             }
-            case 'ADD_API_ID':
+            case 'ADD_API':
                 // logic for adding item to basket
                 return {
                     // return the existing state and updated values
                     ...state,
-                    api: [...state.api, action.api],
-                };
+                    api: [action.item],
+            }
 
       
      

@@ -6,6 +6,7 @@ import "./About.css"
 import { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import View from './View.js';
 
 export const About = () => {
   
@@ -30,31 +31,40 @@ export const About = () => {
       }
     )},[])
 
-    const submithandler = (id) => {     
-      console.log(id);
-  
-    }
+    const submithandler = (id,title,body) => {    
+      const _id = id;
+      const _title = title;
+      const _body = body;
+      console.log(_id);
+      console.log(_title);  
+      console.log(_body);
+      
+       //ADD ITEM TO BASKET
+       dispatch({
+        type:'ADD_API',
+        item: {
+            //key, value
+            id:_id,
+            title:_title,
+            body:_body
+        },
+    });
+    
+    history.push("/ViewPage");
+
+  }
 
  
   return (
-    
-   
-    <HeroImg> 
-      <HeroContainer className="post">
-      
-                               
-            <div>
+                        
+            <div className="post">
             {posts.map((post) => (
              <p className="post__info" key={post.id}><br />
-               <p>{post.post}</p>
-               <Link to={{ pathname: '/View', query: post.id }}> Search </Link>          
+               <p>{post.title}</p> 
+               <button onClick={(evt) => submithandler(post.id, post.title, post.body, evt)}>View</button>                       
              </p>
              )          
              )}
             </div>
-
-         </HeroContainer>  
-        </HeroImg>      
-    
   )
 }

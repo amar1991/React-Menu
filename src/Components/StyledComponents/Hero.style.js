@@ -20,8 +20,8 @@ export const HeroContainer = styled.div`
 
   h1 span{
     color: white;
-    font-size: 24px;
-    font-size: 16px;
+    font-size: 10px;
+    font-size: 15px;
     display:block;
     text-align: center;
 

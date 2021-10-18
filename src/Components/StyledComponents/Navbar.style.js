@@ -12,11 +12,13 @@ export const NavContainer = styled.div`
 
 
 export const Nav = styled.nav`
-background-color: transparent;
+background-color: black;
 box-shadow: none;
-position: absolute;
 width: 100%;
-  
+align-items: center;
+top:0;
+z-index:100;
+ 
 `;
 
 
@@ -31,10 +33,11 @@ export const NavItem = styled.li`
   padding: 20px;
 `;
 export const NavMenu = styled.ul`
-  font-weight: 700;
+  font-weight: 500;
   display:flex;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 `;
 export const Logo = styled.div`
 padding-top: 10px;
+
 `;
